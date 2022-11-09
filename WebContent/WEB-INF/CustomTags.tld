@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+	<tlibversion>2.0</tlibversion>
+	<jspversion>2.0</jspversion>
+	<shortname>CustomerDetails</shortname>
+	<info>Used to get the details of the user</info>
+	<uri>http://prasanna.com</uri>
+	<tag>
+		<name>DisplayUser</name>
+		<tagclass>com.pk.CustomTag.ResultHandler</tagclass>
+		<info>Used to get the details of the user</info>
+	</tag>
+</taglib>
