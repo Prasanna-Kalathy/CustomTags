@@ -11,5 +11,8 @@
 	<c:set var="TestMark" scope="session" value="${99}" ></c:set>
 	<br/>
 	<c:out value="${TestMark}"></c:out>
+	<c:remove var="TestMark"/>
+	<br/>
+	<b>After Removal the value is <c:out value="${TestMark}"></c:out></b>
 </body>
 </html>
