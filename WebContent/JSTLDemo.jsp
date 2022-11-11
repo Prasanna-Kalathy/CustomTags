@@ -7,12 +7,29 @@
 <title>C out Demo</title>
 </head>
 <body>
-	<c:set var="TestMark" scope="session" value="${65}"></c:set>
+	<c:set var="TestMark" scope="session" value="${49}"></c:set>
 	<br />
 	<c:out value="${TestMark}"></c:out>
 	<c:if test="${TestMark>60}">
-		<h3>You passed the Exam: <c:out value="${TestMark}"></c:out></h3>					
+		<h3>
+			You passed the Exam:
+			<c:out value="${TestMark}"></c:out>
+		</h3>
 	</c:if>
+
+	<c:choose>
+		<c:when test="${TestMark >= 80}">
+			<h3>You Grade is: A</h3>
+		</c:when>
+		<c:when test="${TestMark >= 50 && TestMark <80}">
+			<h3>You Grade is: B</h3>
+		</c:when>
+		<c:otherwise>
+			<h3>You Grade is: Fail</h3>
+
+		</c:otherwise>
+	</c:choose>
+
 	<c:remove var="TestMark" />
 	<br />
 	<b>After Removal the value is <c:out value="${TestMark}"></c:out></b>
