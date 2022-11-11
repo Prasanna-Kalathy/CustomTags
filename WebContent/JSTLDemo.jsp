@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 
 <!DOCTYPE html>
@@ -29,6 +31,19 @@
 
 		</c:otherwise>
 	</c:choose>
+
+	<%
+	List<String> StdName = new ArrayList<>();
+	StdName.add("Pk");
+	StdName.add("Sk");
+	StdName.add("Ok");
+	request.setAttribute("StdName", StdName);
+	%>
+	<c:forEach var="i" items="${StdName}">
+		<br>
+		<c:out value="${i}"></c:out>
+	</c:forEach>
+
 
 	<c:remove var="TestMark" />
 	<br />
