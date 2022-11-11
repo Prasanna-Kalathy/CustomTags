@@ -56,6 +56,9 @@
 	<p>Formatted Number 5:<fmt:formatNumber value="${accbalNo}" type="percent"/></p>
 	<p>Formatted Number 5:<fmt:formatNumber value="${accbalNo}" type="number" pattern="Rs###.##"/></p>
 	
+	<c:set var="mydate" value="12-05-2004"/>
+	<fmt:parseDate var="prsdate" value="${mydate}" pattern="dd-mm-yyyy"/>
+	<p>Parsed Date: <c:out value="${prsdate}"/>
 	<c:remove var="TestMark" />
 	<br />
 	<b>After Removal the value is <c:out value="${TestMark}"></c:out></b>
