@@ -1,6 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
 <html>
@@ -44,9 +45,20 @@
 		<c:out value="${i}"></c:out>
 	</c:forEach>
 
-
+	<c:set var="accbal" value="12344.658954"></c:set>
+	
+	<fmt:parseNumber var="accbalNo" type="number" value="${accbal}" />
+	<p> Amount is: <c:out value="${accbalNo}"/></p>
+	<p>Formatted Number 1:<fmt:formatNumber value="${accbalNo}" type="currency"/></p>
+	<p>Formatted Number 2:<fmt:formatNumber value="${accbalNo}" type="number"/></p>
+	<p>Formatted Number 3:<fmt:formatNumber value="${accbalNo}" type="number" maxFractionDigits="2"/></p>
+	<p>Formatted Number 4:<fmt:formatNumber value="${accbalNo}" type="number" maxIntegerDigits="2"/></p>
+	<p>Formatted Number 5:<fmt:formatNumber value="${accbalNo}" type="percent"/></p>
+	<p>Formatted Number 5:<fmt:formatNumber value="${accbalNo}" type="number" pattern="Rs###.##"/></p>
+	
 	<c:remove var="TestMark" />
 	<br />
 	<b>After Removal the value is <c:out value="${TestMark}"></c:out></b>
+
 </body>
 </html>
